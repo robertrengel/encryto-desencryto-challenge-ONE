@@ -1,0 +1,145 @@
+:root {
+    --Light-Dark-Cyan: hsl(214, 26%, 88%);
+    --Light-background: hsl(0, 0%, 100%);
+    --Light-Grayish: hsl(227, 60%, 97%);
+    --Dark-Cyan: #0a3871;
+    --Grayish: #484f56;
+    --Light-Gray: #D8DFE8;
+    --Light-Gray-Blue: #265894;
+  }
+* {
+    box-sizing: border-box;
+  }
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    background-color: var(--Light-Dark-Cyan);
+}
+
+
+main{
+    padding: 24px 16px 40px;
+}
+
+.textAreaWrite{
+    margin-top: 56px;
+    
+}
+
+textarea::placeholder{
+    color: var(--Dark-Cyan);
+    font-size: 32px;
+    opacity: 1;
+}
+
+.textAreaWrite textarea, .textAreaResult textarea{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 100%;
+    border: none; 
+    outline: none;
+    overflow: hidden;
+    resize: none; 
+    background-color: rgba(255, 255, 255, 0); 
+    font-size: 32px;
+    color: var(--Dark-Cyan);
+        
+}
+.textAreaResult{
+    background-color: rgba(255, 255, 255, 1);
+    padding: 32px;
+    border-radius: 24px;
+    /* display: none; */
+}
+
+.textAreaResult textarea{
+    color: var(--Grayish);
+}
+
+.info{
+    display: flex;
+}
+
+.icon_info{
+    height: 100%;
+    align-self: center;
+    padding-right: 8px;
+}
+.buttoms{
+    cursor: default;
+    margin-bottom: 64px;
+}
+.coder, .encoder, .copy_buttom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    background-color: aliceblue;
+    min-height: 67px;
+    margin-bottom: 24px;
+    cursor: pointer;
+}
+
+.coder{
+    background-color: var(--Dark-Cyan);
+    color: var(--Light-background);
+}
+
+.coder:hover{
+    background-color: var(--Light-Gray-Blue);
+
+}
+
+.encoder, .copy_buttom{
+    color: var(--Dark-Cyan);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--Dark-Cyan);
+}
+
+.encoder:hover{
+    background-color: var(--Light-Gray);
+   
+}
+
+.copy_buttom{
+    background-color: var(--Light-background);
+    margin-bottom: 0;
+    margin-top: 32px;
+}
+
+.copy_buttom:hover{
+    background-color: var(--Dark-Cyan);
+    color: var(--Light-background);
+    
+}
+
+.message{
+    background-color: rgba(255, 255, 255, 1);
+    text-align: center;
+    width: 100%;
+    padding: 32px;
+    border-radius: 24px;
+    display: none;
+}
+
+.message p{
+    cursor: default;
+    margin: 0;    
+}
+
+.message  > :nth-child(1){
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    padding-bottom: 16px;
+}
+
+.message  > :nth-child(2){
+    font-size: 16px;
+}
