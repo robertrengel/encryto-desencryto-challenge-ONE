@@ -19,6 +19,10 @@ body{
     background-color: var(--Light-Dark-Cyan);
 }
 
+p{
+    user-select: none;
+}
+
 
 main{
     padding: 24px 16px 40px;
@@ -94,6 +98,10 @@ textarea::placeholder{
 
 }
 
+.coder:active, .encoder:active, .copy_buttom:active{
+    scale: 95%;
+}
+
 .encoder, .copy_buttom{
     color: var(--Dark-Cyan);
     border-width: 1px;
@@ -124,7 +132,7 @@ textarea::placeholder{
     width: 100%;
     padding: 32px;
     border-radius: 24px;
-    display: none;
+    /* display: none; */
 }
 
 .message p{
@@ -142,4 +150,8 @@ textarea::placeholder{
 
 .message  > :nth-child(2){
     font-size: 16px;
+}
+
+.hidden-element{
+    display: none;
 }

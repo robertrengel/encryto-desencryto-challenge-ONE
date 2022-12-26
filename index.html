@@ -16,35 +16,31 @@
             </div>
         </header>
         <section>
-
-            <div class="textAreaWrite">
-                <textarea id="textarea1" rows="4" placeholder="Ingrese texto aqui..."></textarea>
-            </div>
-
-            <div class="info">
-                <img class="icon_info" src="assets/img/bi_exclamation-circle-fill.png" alt="">
-                <p class="text">Solo letras minúsculas y sin acentos</p>
-            </div>
-
-            <div class="buttoms">
-                <div class="coder">
-                    <p>Encriptar</p>
+            <form action="GET">
+                <div class="textAreaWrite">
+                    <textarea id="textarea1" rows="4" placeholder="Ingrese texto aqui..."></textarea>
                 </div>
-                <div class="encoder">
-                    <p>Desencriptar</p>
+                <div class="info">
+                    <img class="icon_info" src="assets/img/bi_exclamation-circle-fill.png" alt="">
+                    <p class="text">Solo letras minúsculas y sin acentos</p>
                 </div>
-            </div>
-
-        </section>
-        <section>
-            <div class="message">
-                <p>Ningún mensaje fue encontrado</p>
-                <p>Ingresa el texto que desees encriptar o desencriptar.</p>
-            </div>
-            <div class="textAreaResult">
-                <textarea id="textarea2" rows="3"></textarea>
-                <div class="copy_buttom">Copiar</div>
-            </div>
+                <div class="buttoms">
+                    <div id="coder-btn" class="coder">
+                        <p>Encriptar</p>
+                    </div>
+                    <div id="encoder-btn" class="encoder">
+                        <p>Desencriptar</p>
+                    </div>
+                </div>
+                <div class="message ">
+                    <p>Ningún mensaje fue encontrado</p>
+                    <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+                </div>
+                <div class="textAreaResult hidden-element">
+                    <textarea id="textarea2" rows="1"></textarea>
+                    <div class="copy_buttom"><p>Copiar</p></div>
+                </div>
+            </form>
         </section>
     </main>
 </body>
