@@ -6,6 +6,7 @@ const coderBtn = document.getElementById("coder-btn");
 const encoderBtn = document.getElementById("encoder-btn");
 const message = document.querySelector(".message");
 const textAreaResult = document.querySelector(".textAreaResult");
+const copyBtn = document.querySelector(".copy_buttom");
 
 const conversiones = {
   e: 'enter',
@@ -32,10 +33,11 @@ window.onload = () => {
 
 textarea1.addEventListener("input", () => {
   // Establecer la altura del div según el scrollHeight del textarea
-  textarea1.style.height = textarea1.scrollHeight + "px";
-  console.log("valor del offsetHeight" +" "+ `${textarea1.scrollHeight}px`)
-  console.log("valor del scrollheight" +" "+ `${textarea1.scrollHeight}px`)
-  console.log(textarea1)
+  textarea1Height()
+  // textarea2.style.height = textarea1.scrollHeight + "px";
+  // console.log("valor del offsetHeight" +" "+ `${textarea1.scrollHeight}px`)
+  // console.log("valor del scrollheight" +" "+ `${textarea1.scrollHeight}px`)
+  // console.log(textarea1)
 });
 
 textarea1.addEventListener('focus', () => {
@@ -47,8 +49,8 @@ textarea1.addEventListener('blur', () => {
   if (!textarea1.value) {
     textarea1.setAttribute('placeholder', 'Ingrese texto aqui...');
     textarea1.style.height = 184 + "px";
-    textarea2Height()
-    textarea1Height()
+    // textarea2Height()
+    // textarea1Height()
     //Al dejar de hacer foco rellena el placeholder con el contenido indicado si el textarea esta vacia
   }
 });
@@ -94,36 +96,41 @@ const createDesencripterMessage = (message) => {
 const showEncripterMessage = () => {
   if (textarea1.value) {
     textarea2.value =  createEncripterMessage(textarea1.value);
+    textarea2Height()
   }
 }
 
 const showDesencripterMessage = () => {
   if (textarea1.value) {
     textarea2.value = createDesencripterMessage(textarea1.value)
+    textarea2Height()
   }
 }
 
 const textarea2Height = () => {
   // Establecer la altura del div según el scrollHeight del textarea
+  textarea2.scrollHeight
   textarea2.style.height = textarea2.scrollHeight + "px";
-  console.log(textarea2.scrollHeight)
 }
 
 const textarea1Height = () => {
   // Establecer la altura del div según el scrollHeight del textarea
   textarea1.style.height = textarea1.scrollHeight + "px";
+  console.log("textarea1 altura" + textarea1.scrollHeight)
 }
+
 
 coderBtn.addEventListener('click', () => {
   hiddenElement()
   showEncripterMessage()
-  
-
-  
 })
 
 encoderBtn.addEventListener('click', () => {
   hiddenElement()
   showDesencripterMessage()
-  
+})
+
+copyBtn.addEventListener("click", () => {
+  const content = textarea2.value
+  navigator.clipboard.writeText(content)
 })
