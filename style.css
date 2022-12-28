@@ -6,7 +6,9 @@
     --Grayish: #484f56;
     --Light-Gray: #D8DFE8;
     --Light-Gray-Blue: #265894;
-  }
+}
+
+
 * {
     box-sizing: border-box;
   }
@@ -28,9 +30,23 @@ main{
     padding: 24px 16px 40px;
 }
 
+@media screen and (min-width: 768px){
+    main{
+        padding: 40px;
+        padding-top: 73px;
+    }
+
+}
+
 .textAreaWrite{
     margin-top: 56px;
     
+}
+
+@media screen and (min-width: 768px){
+    .textAreaWrite{
+        margin-top: 116px;
+    }
 }
 
 textarea::placeholder{
@@ -53,6 +69,7 @@ textarea::placeholder{
     color: var(--Dark-Cyan);
         
 }
+
 .textAreaResult{
     background-color: rgba(255, 255, 255, 1);
     padding: 32px;
@@ -68,6 +85,10 @@ textarea::placeholder{
     display: flex;
 }
 
+.info p{
+    font-size: 12px;
+}
+
 .icon_info{
     height: 100%;
     align-self: center;
@@ -77,6 +98,13 @@ textarea::placeholder{
     cursor: default;
     margin-bottom: 64px;
 }
+
+@media screen and (min-width: 768px) {
+    .buttoms{
+        display: flex;
+    }
+  }
+  
 .coder, .encoder, .copy_buttom{
     display: flex;
     align-items: center;
