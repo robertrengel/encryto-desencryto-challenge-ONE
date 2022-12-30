@@ -21,6 +21,7 @@ body{
     background-color: var(--Light-Dark-Cyan);
 }
 
+
 p{
     user-select: none;
 }
@@ -38,9 +39,28 @@ main{
 
 }
 
+@media screen and (min-width:1440px){
+    main{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 40px;
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width:1440px){
+    form{
+        display: flex;
+    }
+}
+
 .textAreaWrite{
     margin-top: 56px;
-    
+
 }
 
 @media screen and (min-width: 768px){
@@ -60,14 +80,14 @@ textarea::placeholder{
     margin-right: auto;
     display: block;
     width: 100%;
-    border: none; 
+    border: none;
     outline: none;
     overflow: hidden;
-    resize: none; 
-    background-color: rgba(255, 255, 255, 0); 
+    resize: none;
+    background-color: rgba(255, 255, 255, 0);
     font-size: 32px;
     color: var(--Dark-Cyan);
-        
+
 }
 
 .textAreaResult{
@@ -83,10 +103,12 @@ textarea::placeholder{
 
 .info{
     display: flex;
+    margin-bottom: 16px;
 }
 
 .info p{
     font-size: 12px;
+    margin-bottom: 0;
 }
 
 .icon_info{
@@ -102,9 +124,17 @@ textarea::placeholder{
 @media screen and (min-width: 768px) {
     .buttoms{
         display: flex;
+
     }
   }
-  
+
+@media screen and (min-width:1440px){
+    .buttoms{
+        width: 680px;
+        margin-bottom: 32px;
+    }
+}
+
 .coder, .encoder, .copy_buttom{
     display: flex;
     align-items: center;
@@ -114,6 +144,16 @@ textarea::placeholder{
     min-height: 67px;
     margin-bottom: 24px;
     cursor: pointer;
+}
+
+@media screen and (min-width: 768px){
+    .coder, .encoder{
+        width: 100%;
+        margin-bottom: 24px;
+    }
+    .coder{
+        margin-right: 24px;
+    }
 }
 
 .coder{
@@ -139,7 +179,7 @@ textarea::placeholder{
 
 .encoder:hover{
     background-color: var(--Light-Gray);
-   
+
 }
 
 .copy_buttom{
@@ -151,7 +191,7 @@ textarea::placeholder{
 .copy_buttom:hover{
     background-color: var(--Dark-Cyan);
     color: var(--Light-background);
-    
+
 }
 
 .message{
@@ -165,10 +205,10 @@ textarea::placeholder{
 
 .message p{
     cursor: default;
-    margin: 0;    
+    margin: 0;
 }
 
-.message  > :nth-child(1){
+.message  > :nth-child(2){
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
@@ -176,10 +216,76 @@ textarea::placeholder{
     padding-bottom: 16px;
 }
 
-.message  > :nth-child(2){
+.message  > :nth-child(3){
     font-size: 16px;
 }
 
 .hidden-element{
     display: none;
+}
+
+@media screen and (min-width:1440px){
+
+    body{
+        margin: 100vh;
+        background-image: linear-gradient(to right top, #3070b3, #3370b5, #3670b6, #3a6fb8, #3d6fb9, #3078bf, #1f80c5, #0088c9, #0099cd, #00a9cc, #1db8c8, #4fc6c3);
+    
+    
+    }
+
+    main{
+        background-color: var(--Light-Gray);
+        border-radius: 32px;
+    }
+
+    .encoder_desktop{
+        /* background-color: red; */
+        margin-left: 200px;
+        margin-right: 80px;
+    }
+
+    .decoder_desktop{
+        /* background-color: blue; */
+        width: 400px;
+    }
+
+    .decoder_desktop::before{
+        position: absolute;
+        content: "";
+        top: 40px;
+        width: 400px;
+        height: 48px;
+        background-color: var(--Light-background);
+        border-top-left-radius: 32px;
+        border-top-right-radius: 32px ;
+
+    }
+
+    .logo{
+        display: flex;
+        /* background-color: yellow; */
+        width: 120px;
+
+    }
+
+    .logo img{
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .message{
+        height: 100%;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0 ;
+        border-bottom-left-radius: 32px;
+        border-bottom-right-radius: 32px;
+    }
+
+    .message_img{
+        height: 304px;
+        background-image: url(assets/img/Muñeco.png);
+        background-repeat: no-repeat;
+        margin-top: 163px;
+    }
 }
