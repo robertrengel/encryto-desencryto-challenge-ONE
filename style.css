@@ -228,7 +228,9 @@ textarea::placeholder{
 
     body{
         margin: 100vh;
-        background-image: linear-gradient(to right top, #3070b3, #3370b5, #3670b6, #3a6fb8, #3d6fb9, #3078bf, #1f80c5, #0088c9, #0099cd, #00a9cc, #1db8c8, #4fc6c3);
+        background-image: linear-gradient(to right top, #3070b3, 
+        #3370b5, #3670b6, #3a6fb8, #3d6fb9, #3078bf,
+        #1f80c5, #0088c9, #0099cd, #00a9cc, #1db8c8, #4fc6c3);
     
     
     }
@@ -287,5 +289,20 @@ textarea::placeholder{
         background-image: url(assets/img/Muñeco.png);
         background-repeat: no-repeat;
         margin-top: 163px;
+    }
+
+    .textAreaWrite textarea, .textAreaResult textarea{
+        overflow: scroll;
+    }
+
+    .textAreaResult{
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        height: 100%;
+    }
+
+    .textAreaResult textarea{
+        height: 721px;
+        font-size: 24px;
     }
 }

@@ -3,12 +3,13 @@ const textarea2 = document.getElementById("textarea2");
 const textAreaContainer = document.querySelectorAll(".textAreaWrite, .textAreaResult");
 const textareas = document.querySelectorAll('textarea');
 const textAreaResult = document.querySelector(".textAreaResult");
-const textarea1Heights = {mobile:"181px",tablet: "626px"} 
+const textarea1Heights = {mobile:"181px",tablet: "626px"}
+const textarea2Heights = 48
 const coderBtn = document.getElementById("coder-btn");
 const encoderBtn = document.getElementById("encoder-btn");
 const copyBtn = document.querySelector(".copy_buttom");
 const message = document.querySelector(".message");
-const screenWidth = {tablet:"768"}
+const screenWidth = {tablet:"768", desktop:"1440"}
 const rowsTextarea1 = {mobile: 4, tablet: 14}
 
 const conversiones = {
@@ -48,6 +49,7 @@ textarea1.addEventListener("input", () => {
     resizeHeightTextarea1()
   }
   //Establecer la altura del div según el scrollHeight del textarea
+  
   textarea1Height()
 });
 
@@ -109,14 +111,20 @@ const showDesencripterMessage = () => {
 
 //funcion que establece la altura del div según el scrollHeight del textarea de resultados
 const textarea2Height = () => {
-  textarea2.scrollHeight
-  textarea2.style.height = textarea2.scrollHeight + "px";
+  if (window.innerWidth < screenWidth["desktop"]){
+    textarea2.scrollHeight
+    textarea2.style.height = textarea2.scrollHeight + "px";
+
+  }
 }
 
 //funcion que establece la altura del div según el scrollHeight del textarea de ingreso de texto
 const textarea1Height = () => {
-  textarea1.style.height = textarea1.scrollHeight + "px";
-  console.log("textarea1 altura" + textarea1.scrollHeight)
+  if (window.innerWidth < screenWidth["desktop"]){
+
+    textarea1.style.height = textarea1.scrollHeight + "px";
+    console.log("textarea1 altura" + textarea1.scrollHeight)
+  }
 }
 
 //funcion que ajusta las filas (rows) del textarea1 segun el tamaño de la ventana o dispositivo
@@ -151,6 +159,13 @@ encoderBtn.addEventListener('click', () => {
 
 //ejecuta la copia del texto del textarea de resultados
 copyBtn.addEventListener("click", () => {
-  const content = textarea2.value
-  navigator.clipboard.writeText(content)
+  if(textarea2.value){
+    const content = textarea2.value
+    navigator.clipboard.writeText(content)
+    textarea2.value = ""
+    textarea1.value = ""
+    resizeHeightTextarea1()
+    hiddenElement()
+  }
+
 })
