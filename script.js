@@ -183,5 +183,5 @@ const callModal = (message) => {
   modal.style.display = 'block';
   setTimeout(() => {
     modal.style.display = 'none';
-  }, 2500);
+  }, 2000);
 }
