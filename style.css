@@ -292,7 +292,7 @@ textarea::placeholder{
     }
 
     .textAreaWrite textarea, .textAreaResult textarea{
-        overflow: scroll;
+        overflow: visible;
     }
 
     .textAreaResult{
@@ -304,5 +304,24 @@ textarea::placeholder{
     .textAreaResult textarea{
         height: 721px;
         font-size: 24px;
+    }
+    ::-webkit-scrollbar {
+        width: 3px;
+        background-color: var(--Light-Gray);
+      }
+    
+    ::-webkit-scrollbar-thumb {
+    background-color: var(--Dark-Cyan);
+    border-radius: 10px;
+    }
+
+    ::-moz-scrollbar {
+        width: 3px;
+        background-color: var(--Light-Gray);
+      }
+      
+    ::-moz-scrollbar-thumb {
+    background-color: var(--Dark-Cyan);
+    border-radius: 10px;
     }
 }
