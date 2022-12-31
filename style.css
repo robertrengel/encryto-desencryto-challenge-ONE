@@ -121,6 +121,22 @@ textarea::placeholder{
     margin-bottom: 64px;
 }
 
+.modal{
+    display: none;
+    position: absolute;
+    padding: 25px;
+    left: 50%;
+    top: 40px;
+    transform: translateX(-50%);
+    background-color: #0d8add;
+    color: #f1f8ff;
+    font-family: inherit;
+    border-radius: 8px;
+    border: solid 1px #d5dee8;
+    font-weight: bold;
+    font-size: 24px;
+}
+
 @media screen and (min-width: 768px) {
     .buttoms{
         display: flex;
@@ -154,6 +170,8 @@ textarea::placeholder{
     .coder{
         margin-right: 24px;
     }
+
+
 }
 
 .coder{
@@ -324,4 +342,6 @@ textarea::placeholder{
     background-color: var(--Dark-Cyan);
     border-radius: 10px;
     }
+
+
 }

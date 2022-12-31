@@ -11,6 +11,7 @@ const copyBtn = document.querySelector(".copy_buttom");
 const message = document.querySelector(".message");
 const screenWidth = {tablet:"768", desktop:"1440"}
 const rowsTextarea1 = {mobile: 4, tablet: 14}
+const modal = document.getElementById("modal");
 
 const conversiones = {
   e: 'enter',
@@ -147,14 +148,20 @@ const resizeHeightTextarea1 = () =>{
 
 //ejecuta la encriptacion del texto al hacer click en boton encriptar
 coderBtn.addEventListener('click', () => {
-  hiddenElement()
-  showEncripterMessage()
+  if(textarea1.value){
+    hiddenElement()
+    showEncripterMessage()
+    callModal("Mensaje Encriptado")
+  }
 })
 
 //ejecuta la desencriptacion del texto al hacer click en boton desencriptar
 encoderBtn.addEventListener('click', () => {
-  hiddenElement()
-  showDesencripterMessage()
+  if(textarea1.value){
+    hiddenElement()
+    showDesencripterMessage()
+    callModal("Mensaje Desencriptado")
+  }
 })
 
 //ejecuta la copia del texto del textarea de resultados
@@ -166,6 +173,15 @@ copyBtn.addEventListener("click", () => {
     textarea1.value = ""
     resizeHeightTextarea1()
     hiddenElement()
+    callModal("Mensaje Copiado")
   }
 
 })
+
+const callModal = (message) => {
+  modal.innerText = message
+  modal.style.display = 'block';
+  setTimeout(() => {
+    modal.style.display = 'none';
+  }, 2500);
+}
