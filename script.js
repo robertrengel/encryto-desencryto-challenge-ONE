@@ -29,36 +29,6 @@ const conversiones2 = {
   ufat: 'u',
 };
 
-window.onload = () => {
-  //Funcion que limpia los campos de texto al recargar la pagina
-    textareas.forEach((textarea) => {
-        textarea.value = "";  
-    });
-    resizeRowsTextarea1()
-  }
-
- window.addEventListener("resize", () => {
-  // par de funciones que ajuntan el tamaño del textarea al redimencionar la ventana del navegador
-  resizeRowsTextarea1()
-  resizeHeightTextarea1()
- });
-
-textarea1.addEventListener("input", () => {
-  //funcion que ajusta el placeholder y el alto del textarea1 cuando esta sin texto 
-  if (!textarea1.value) {
-    textarea1.setAttribute('placeholder', 'Ingrese texto aqui...');
-    resizeHeightTextarea1()
-  }
-  //Establecer la altura del div según el scrollHeight del textarea
-  
-  textarea1Height()
-});
-
-textarea1.addEventListener('focus', () => {
-  //Borra el contenido del placeholder al hacer foco
-  textarea1.setAttribute('placeholder', '');
-});
-
 const hiddenElement = () => {
   //Oculta el elemento que muestra que "no hay ningun mensaje encontrado" para luego mostrar el textarea
   //de los resultados
@@ -85,6 +55,7 @@ const createEncripterMessage = (message) => {
     // Devuelve el texto modificado como una cadena de texto
     return textEncrpter.join('');
   }
+
 //funcion desencriptadora 
 const createDesencripterMessage = (message) => {
     // Crea una expresión regular con todas las secuencias del objeto "conversiones2"
@@ -122,7 +93,6 @@ const textarea2Height = () => {
 //funcion que establece la altura del div según el scrollHeight del textarea de ingreso de texto
 const textarea1Height = () => {
   if (window.innerWidth < screenWidth["desktop"]){
-
     textarea1.style.height = textarea1.scrollHeight + "px";
     console.log("textarea1 altura" + textarea1.scrollHeight)
   }
@@ -145,6 +115,43 @@ const resizeHeightTextarea1 = () =>{
     textarea1.style.height = textarea1Heights["tablet"]
   }
 }
+//funcio que controla cuando se muestra el modal y el mensaje que contiene
+const callModal = (message) => {
+  modal.innerText = message
+  modal.style.display = 'block';
+  setTimeout(() => {
+    modal.style.display = 'none';
+  }, 2000);
+}
+
+window.onload = () => {
+  //Funcion que limpia los campos de texto al recargar la pagina
+    textareas.forEach((textarea) => {
+        textarea.value = "";  
+    });
+    resizeRowsTextarea1()
+  }
+
+ window.addEventListener("resize", () => {
+  // par de funciones que ajuntan el tamaño del textarea al redimencionar la ventana del navegador
+  resizeRowsTextarea1()
+  resizeHeightTextarea1()
+ });
+
+textarea1.addEventListener("input", () => {
+  //funcion que ajusta el placeholder y el alto del textarea1 cuando esta sin texto 
+  if (!textarea1.value) {
+    textarea1.setAttribute('placeholder', 'Ingrese texto aqui...');
+    resizeHeightTextarea1()
+  }
+  //Establecer la altura del div según el scrollHeight del textarea
+  textarea1Height()
+});
+
+textarea1.addEventListener('focus', () => {
+  //Borra el contenido del placeholder al hacer foco
+  textarea1.setAttribute('placeholder', '');
+});
 
 //ejecuta la encriptacion del texto al hacer click en boton encriptar
 coderBtn.addEventListener('click', () => {
@@ -178,10 +185,3 @@ copyBtn.addEventListener("click", () => {
 
 })
 
-const callModal = (message) => {
-  modal.innerText = message
-  modal.style.display = 'block';
-  setTimeout(() => {
-    modal.style.display = 'none';
-  }, 2000);
-}
