@@ -83,6 +83,9 @@ main{
     bottom: 0px;
     align-items: center;
    }
+   .footer::webkit{
+    padding-bottom: 0;
+   }
 
    .footer p{
     margin: 0;
